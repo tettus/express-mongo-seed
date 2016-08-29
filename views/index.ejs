@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    
+    
+    
+    <ul>
+    
+    <% if(locals.users){
+      for(var i=0; i<locals.users.length ;i++){
+      
+      var user= users[i];
+    
+    %>
+      <li> <%=user.firstName%> <%=user.lastName%></li>
+    
+    <%}}%>
+    </ul>
+    
+    
+    <div>
+      <h3>Add User</h3>
+      
+      <form action="/users/add" method="post">
+         
+         <table>
+           <tr>
+             <td><label>First Name</label></label><input type="text" name="firstName"/></td>
+             <td><label>Last Name</label><input type="text" name="firstName"/></td>
+           </tr>
+           <tr> <td>
+           <button type="submit" >Add User</button> </td>
+           </tr>
+         </table>
+      
+      
+      </form>
+    
+    </div>
+    
+  </body>
+</html>
